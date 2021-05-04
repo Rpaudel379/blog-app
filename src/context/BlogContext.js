@@ -13,7 +13,7 @@ const BlogProvider = ({ children }) => {
       const response = await fetch.data;
       console.log(response);
       if (response) {
-        setBlogs(response);
+        setBlogs(response); 
         setBlogLoading(false);
       }
     } catch (err) {
