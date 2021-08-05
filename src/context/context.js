@@ -26,6 +26,7 @@ const AppProvider = ({ children }) => {
               headers: { "x-auth-token": token },
             }
           );
+
           if (tokenRes.data) {
             console.log(tokenRes.data);
             setUserData(tokenRes.data);
