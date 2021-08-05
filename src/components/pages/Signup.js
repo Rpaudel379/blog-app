@@ -12,18 +12,16 @@ const Signup = (props) => {
 
   const [userErrors, setUserErrors] = useState();
   const [logged, setLogged] = useState(false);
-  
+
   // ? handlesubmit function
   const handleSubmit = (e) => {
     e.preventDefault();
-
     const username = e.target.username.value;
     const email = e.target.email.value;
     const password = e.target.password.value;
-
     try {
       axios
-        .post("https://mernblog-app.herokuapp.com/signup", {
+        .post(`${process.env.REACT_APP_BACKEND}signup`, {
           username,
           email,
           password,
@@ -35,7 +33,7 @@ const Signup = (props) => {
             // setUserData({ token: data.token, user: data.user });
             cookie.set("jwt", data.token, { expires: 5 });
             setLogged(true);
-            setTimeout(() => { 
+            setTimeout(() => {
               window.location.href = "/";
             }, 2000);
           }
@@ -67,7 +65,7 @@ const Signup = (props) => {
         {userData ? (
           <p className="user-exists">Please logout first</p>
         ) : (
-          <>
+          <> 
             <h1>Signup</h1>
 
             <form onSubmit={handleSubmit}>
@@ -94,7 +92,7 @@ const Signup = (props) => {
               <div className="input">
                 <button className="signup-button">Signup</button>
               </div>
-            </form> 
+            </form>
           </>
         )}
       </div>

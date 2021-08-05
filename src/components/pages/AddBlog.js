@@ -57,13 +57,16 @@ const AddBlog = (props) => {
     const body = e.target.body.value;
 
     try {
-      const request = await axios.post("https://mernblog-app.herokuapp.com/addblog", {
-        title,
-        body,
-        image: img64,
-        userId: userData.id,
-        name: userData.username,
-      });
+      const request = await axios.post(
+        process.env.REACT_APP_BACKEND + "addblog",
+        {
+          title,
+          body,
+          image: img64,
+          userId: userData.id,
+          name: userData.username,
+        }
+      );
 
       const response = await request.data;
       console.log(response);

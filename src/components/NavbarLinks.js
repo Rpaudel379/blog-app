@@ -1,8 +1,15 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { useGlobalContext } from "../context/context";
+
+// loader component
 import LoadingNav from "./LoadingNav";
+
+//context
+import { useGlobalContext } from "../context/context";
+
 const NavbarLinks = ({ setBars, handleLogout }) => {
+  
+  // from context
   const { userData, loading } = useGlobalContext();
 
   const loggedIn = [

@@ -285,6 +285,19 @@ h3 {
   margin: 0 auto;
 }
 
+.go-back{
+  position: absolute;
+  top: 13%;
+  left: 10%;
+  font-size: 2rem;
+  cursor: pointer;
+
+  &:hover{
+    color: $color-lightblue;
+    transition: $transition;
+  }
+}
+
 /*~~~~~~~~~~~~~ //? single blog ~~~~~~~~~~~~~~~ */
 .section-blog {
   margin: 10em auto 2em;

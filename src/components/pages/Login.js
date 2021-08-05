@@ -21,9 +21,9 @@ const Login = (props) => {
     const email = e.target.email.value;
     const password = e.target.password.value;
 
-    try { 
+    try {
       axios
-        .post("https://mernblog-app.herokuapp.com/login", {
+        .post(process.env.REACT_APP_BACKEND + "login", {
           username,
           email,
           password,
@@ -47,7 +47,7 @@ const Login = (props) => {
     } catch (err) {
       console.log(err);
     }
-  }; 
+  };
 
   return (
     <div className="login-page">
