@@ -600,7 +600,7 @@ h3 {
           border: none;
           border-bottom: 3px solid $color-jet;
           position: relative;
-          z-index: 1;
+          z-index: 10;
           color: $color-jet;
           font-size: 1em;
           transition: $transition;
