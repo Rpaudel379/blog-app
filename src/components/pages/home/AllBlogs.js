@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { BiCalendar } from "react-icons/bi";
 const AllBlogs = ({ blogs, loading }) => {
+
   if (loading) {
     return <h2>loading blogs...</h2>;
   }
@@ -17,9 +18,7 @@ const AllBlogs = ({ blogs, loading }) => {
         return (
           <section className="section-blog" key={blog._id}>
             <div className="img-cont-all">
-              <Link to={`/blog/${_id}`} style={{ fontWeight: "bold" }}>
-                <img src={image} alt="img" />
-              </Link>
+              <img src={image} alt="img" />
             </div>
             <div className="content">
               <h3>{title}</h3>

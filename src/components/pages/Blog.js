@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { BiCalendar } from "react-icons/bi";
-import { IoIosArrowDropleft } from "react-icons/io";
 import { Link, useParams } from "react-router-dom";
 import axios from "axios";
 import Loading from "../Loading";
@@ -14,12 +13,9 @@ const Blog = () => {
     setLoading(true);
     const getBlog = async () => {
       try {
-        const fetch = await axios.get(
-          process.env.REACT_APP_BACKEND + "singleblog",
-          {
-            headers: { blogId: id },
-          }
-        );
+        const fetch = await axios.get("https://mernblog-app.herokuapp.com/singleblog", {
+          headers: { blogId: id },
+        });
         const response = await fetch.data;
         console.log(response);
         if (response) {
@@ -51,7 +47,7 @@ const Blog = () => {
   }
 
   const { image, title, body, createdAt, name } = blog;
-
+  
   const handleImage = () => {
     let newTab = window.open();
     newTab.document.body.innerHTML = `<!DOCTYPE html>
@@ -85,30 +81,23 @@ const Blog = () => {
     //?     newTab.document.write(imageTab.outerHTML);
   };
   return (
-    <div>
-      <div className="go-back">
-        <Link to="/">
-          <IoIosArrowDropleft />
-        </Link> 
+    <section className="section-blog container">
+      <div className="img-cont">
+        <img src={image} alt="img" onClick={handleImage} />
       </div>
-      <section className="section-blog container">
-        <div className="img-cont">
-          <img src={image} alt="img" onClick={handleImage} />
+      <div className="content">
+        <div className="date">
+          <p>
+            <BiCalendar />
+          </p>
+          <p>
+            {createdAt} by <span>{name}</span>
+          </p>
         </div>
-        <div className="content">
-          <div className="date">
-            <p>
-              <BiCalendar />
-            </p>
-            <p>
-              {createdAt} by <span>{name}</span>
-            </p>
-          </div>
-          <h3>{title}</h3>
-          <p className="text">{body}</p>
-        </div>
-      </section>
-    </div>
+        <h3>{title}</h3>
+        <p className="text">{body}</p>
+      </div>
+    </section>
   );
 };
 

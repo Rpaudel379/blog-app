@@ -285,19 +285,6 @@ h3 {
   margin: 0 auto;
 }
 
-.go-back{
-  position: absolute;
-  top: 13%;
-  left: 10%;
-  font-size: 2rem;
-  cursor: pointer;
-
-  &:hover{
-    color: $color-lightblue;
-    transition: $transition;
-  }
-}
-
 /*~~~~~~~~~~~~~ //? single blog ~~~~~~~~~~~~~~~ */
 .section-blog {
   margin: 10em auto 2em;
@@ -600,7 +587,7 @@ h3 {
           border: none;
           border-bottom: 3px solid $color-jet;
           position: relative;
-          z-index: 10;
+          z-index: 1;
           color: $color-jet;
           font-size: 1em;
           transition: $transition;
@@ -609,7 +596,7 @@ h3 {
 
         label {
           position: relative;
-          z-index: 20;
+          z-index: 5;
           top: -30px;
           pointer-events: none;
           transition: 0.2s linear;
@@ -775,3 +762,7 @@ h3 {
 }
 
 /* //? on tablet devices  */
+
+
+
+//? close of table devices

@@ -10,12 +10,9 @@ const Add = () => {
   const handleMyBlog = async () => {
     setBlogLoading(true);
     try {
-      const fetch = await axios.get(
-        process.env.REACT_APP_BACKEND + "userBlog",
-        {
-          headers: { userId: userData.id },
-        }
-      );
+      const fetch = await axios.get("https://mernblog-app.herokuapp.com/userBlog", {
+        headers: { userId: userData.id },
+      });
       const response = await fetch.data;
       console.log(response);
       if (response) {

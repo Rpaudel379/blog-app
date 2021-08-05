@@ -3,18 +3,17 @@ import axios from "axios";
 const BlogContext = createContext();
 
 const BlogProvider = ({ children }) => {
-  
   const [blogLoading, setBlogLoading] = useState(true);
   const [blogs, setBlogs] = useState([]);
 
   const getBlogs = async () => {
     setBlogLoading(true);
     try {
-      const fetch = await axios.get(process.env.REACT_APP_BACKEND + "getblogs");
+      const fetch = await axios.get("https://mernblog-app.herokuapp.com/getblogs");
       const response = await fetch.data;
       console.log(response);
       if (response) {
-        setBlogs(response);
+        setBlogs(response); 
         setBlogLoading(false);
       }
     } catch (err) {

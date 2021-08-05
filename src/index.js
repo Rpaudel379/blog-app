@@ -12,4 +12,3 @@ ReactDOM.render(
   </AppProvider>,
   document.getElementById("root")
 );
-   

@@ -1,11 +1,7 @@
 import React from "react";
-
-// user context
 import { useGlobalContext } from "../../../context/context";
-
 import Add from "./Add";
 import Login from "./Login";
-
 const Line = () => {
   const { userData } = useGlobalContext();
 
@@ -26,4 +22,3 @@ const Line = () => {
 };
 
 export default Line;
- 

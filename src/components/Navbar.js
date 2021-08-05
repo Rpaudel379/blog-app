@@ -4,11 +4,8 @@ import { FaBars, FaTimes } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 import NavbarLinks from "./NavbarLinks";
-
 //import axios from "axios";
 const Navbar = () => {
-
-  // for conditional rendering -> modal
   const [loggedOut, setLoggedOut] = useState(false);
 
   // logout function
@@ -32,8 +29,6 @@ const Navbar = () => {
 
   return (
     <nav className="nav">
-
-      {/* if logged out */}
       {loggedOut && (
         <div className="model">
           <div className="model-content">
@@ -51,13 +46,10 @@ const Navbar = () => {
           </div>
         </div>
       )}
-
-      {/* not loggged out */}
       <div className="nav-center">
         <Link to="/" className="logo">
           <h1>anishSite</h1>
         </Link>
-        
         <div className="header">
           <div className="bars" onClick={mobileMenu}>
             {!bars ? <FaBars /> : <FaTimes />}
