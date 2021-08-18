@@ -30,7 +30,6 @@ const Signup = (props) => {
         })
         .then((res) => {
           const data = res.data;
-          console.log(data);
           if (data) {
             // setUserData({ token: data.token, user: data.user });
             cookie.set("jwt", data.token, { expires: 5 });

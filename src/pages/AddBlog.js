@@ -69,7 +69,6 @@ const AddBlog = (props) => {
       );
 
       const response = await request.data;
-      console.log(response);
 
       if (response) {
         setRedirect(true);

@@ -21,7 +21,6 @@ const Blog = () => {
           }
         );
         const response = await fetch.data;
-        console.log(response);
         if (response) {
           setBlog(response);
           setLoading(false);
