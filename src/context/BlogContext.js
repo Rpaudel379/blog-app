@@ -9,11 +9,12 @@ const BlogProvider = ({ children }) => {
   const getBlogs = async () => {
     setBlogLoading(true);
     try {
-      const fetch = await axios.get("https://mernblog-app.herokuapp.com/getblogs");
+      const fetch = await axios.get(
+        process.env.REACT_APP_BACKEND + "/getblogs"
+      );
       const response = await fetch.data;
-      console.log(response);
       if (response) {
-        setBlogs(response); 
+        setBlogs(response);
         setBlogLoading(false);
       }
     } catch (err) {

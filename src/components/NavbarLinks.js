@@ -59,8 +59,15 @@ const NavbarLinks = ({ setBars, handleLogout }) => {
     <>
       {" "}
       <li>
-        <Link to="/" className="navbar-username" onClick={() => setBars(false)}>
-          {userData.username}
+        <Link
+          to="/"
+          className="navbar-username"
+          onClick={() => setBars(false)}
+          title={userData.username}
+        >
+          {userData.username > 10
+            ? userData.username.slice(0, 10) + "..."
+            : userData.username}
         </Link>
       </li>
       {loggedIn.map((links) => {

@@ -20,14 +20,13 @@ const AppProvider = ({ children }) => {
         setLoading(true);
         try {
           const tokenRes = await axios.post(
-            "https://mernblog-app.herokuapp.com/valid",
+            process.env.REACT_APP_BACKEND + "/valid",
             null,
             {
               headers: { "x-auth-token": token },
             }
           );
           if (tokenRes.data) {
-            console.log(tokenRes.data);
             setUserData(tokenRes.data);
             setLoading(false);
           }

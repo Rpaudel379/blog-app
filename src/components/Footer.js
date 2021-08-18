@@ -6,7 +6,7 @@ const Footer = () => {
       <p>
         Made by <span>Anish Paudel</span> . 20 Jan 2020
       </p>
-      <div>
+      <div onClick={(e) => window.scrollTo({ top: 0, behavior: "smooth" })}>
         <IoIosArrowDropup className="up" />
       </div>
     </footer>

@@ -280,6 +280,19 @@ h3 {
 
 /* ~~~~~~~ CONTAINER ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 /* ~~~~~~~ CONTAINER ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+.go-back {
+  position: absolute;
+  top: 13%;
+  left: 10%;
+  font-size: 2rem;
+  cursor: pointer;
+
+  &:hover {
+    color: $color-lightblue;
+    transition: $transition;
+  }
+}
+
 .container {
   max-width: $max-width;
   margin: 0 auto;
@@ -762,7 +775,5 @@ h3 {
 }
 
 /* //? on tablet devices  */
-
-
 
 //? close of table devices
